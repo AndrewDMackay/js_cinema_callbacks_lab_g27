@@ -38,4 +38,32 @@ Cinema.prototype.findFilmsByYear = function (year) {
 }
 
 
+Cinema.prototype.findFilmsOverLength = function (length) {
+  const result = this.films.filter(film => film.length >= length)
+      return true
+}
+
+
+// Cinema.prototype.findFilmLengths = function () {
+//   const result = this.films.map(film => {
+//     return film.length;
+//   })
+//   return result;
+// }
+
+
+Cinema.prototype.findTotalRunningTime = function () {
+  const result = this.films.reduce((accumulator, film) => {
+    return accumulator + film.length
+  })
+  return result
+}
+
+
+Cinema.prototype.findFilmsByProperty = function (property, value) {
+  const result = this.films.filter(film => film.property === value)
+    return result
+}
+
+
 module.exports = Cinema;
